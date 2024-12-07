@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيق تنبيهات OneSignal</title>
+
+    <!-- إضافة كود OneSignal -->
+   <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "242e8b81-0ede-4a89-8924-252febd23c8b",
+      safari_web_id: "web.onesignal.auto.37a647a2-1bdc-46a8-a505-4f4cc6400a46",
+      notifyButton: {
+        enable: true,
+      },
+    });
+  });
+</script>
+
+
+
+
+    <!-- تحفيز ظهور نافذة التنبيهات -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            window.OneSignal = window.OneSignal || [];
+            OneSignal.push(function() {
+                OneSignal.showNativePrompt(); // يجبر ظهور نافذة السماح
+            });
+        });
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #005fbf;
+        }
+        p {
+            font-size: 1.2em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>مرحباً بكم في تطبيق تنبيهات OneSignal</h1>
+        <p>يرجى السماح بإرسال التنبيهات لتلقي آخر الأخبار.</p>
+    </div>
+</body>
+</html>
